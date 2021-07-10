@@ -1,0 +1,1647 @@
+// body
+* 
+    box-sizing: border-box
+    outline: none
+
+a 
+    text-decoration: none
+    color: inherit
+
+.hidden
+    visibility: hidden
+
+.main
+    overflow: hidden
+
+a, button 
+    cursor: pointer
+
+input, button
+    border: none
+    padding: 0
+    background: none
+
+p, ul, h1, h2, h3, h4, h5, h6, ol
+    padding: 0
+    margin: 0
+    font-weight: normal
+
+ul, ol 
+    list-style: none
+
+button, input
+    display: inline-block
+
+
+body 
+    font-family: Gilroy, Helvetica, sans-serif
+    background-color: #fff
+
+// var
+@mixin Serif
+    font-family: PT Serif
+    font-weight: normal 
+
+@mixin Title
+    margin-bottom: 70px
+    text-align: center
+    font-size: 45px
+    line-height: 1.3
+    font-family: PT Serif
+    font-weight: normal       
+
+// Header
+.header
+    padding-bottom: 230px
+    background: 
+        image: url(../img/main-header.png)
+        repeat: no-repeat
+        size: cover
+        position: top center
+    color: #fff
+    &-top
+        position: fixed
+        left: 0
+        right: 0
+        top: 0
+        z-index: 5
+        transition: all 0.3s
+        border-bottom: 1px solid rgba(255,255,255,0.15)
+        padding-top: 25px
+        padding-bottom: 25px
+        text-align: center
+        position: fixed
+        &__img
+            display: inline-block
+            height: 37px
+        &-contact
+            display: inline-flex
+            align-items: center
+            margin-left: 28px
+            &__img
+                display: inline-block
+                width: 15px
+                height: 15px
+                margin-right: 10px
+            &__link
+                font-size: 18px
+                line-height: 1.2
+                text-transform: lowercase
+                transition: color 0.4s
+                &:hover
+                    color: #FFB75E
+                    transition: color 0.4s
+        &__btn            
+            border: 1px solid #FFB75E
+            border-radius: 9999px
+            padding-top: 16px
+            padding-bottom: 16px
+            padding-left: 28px
+            padding-right: 28px
+            font-size: 18px
+            line-height: 1
+            color: #fff
+            transition: background-color 0.4s
+            &:hover
+                background-color: #FFB75E
+                transition: background-color 0.4s       
+    &-bottom       
+        padding-top: 200px
+        margin-top: 0                 
+        &__title
+            @include Serif                                                                           
+            font-size: 38px
+            text-transform: uppercase
+            line-height: 1.5            
+            &--bold                
+                font-weight: 700
+        &-stock          
+            margin-top: 60px
+            padding-left: 25px
+            padding-bottom: 5px
+            padding-top: 5px
+            border-left: 4px solid #FFB75E
+            position: relative
+            display: inline-block
+            &::after
+                position: absolute
+                content: ''
+                display: inline-block
+                width: 120px
+                height: 120px
+                transform: rotate(360deg)
+                background: url(../img/main-block/arrow.svg)
+                background-size: contain
+                background-repeat: no-repeat
+                top: -50px
+                right: -170px
+            &__title
+                @include Serif
+                margin-bottom: 15px
+                font-size: 24px                
+                line-height: 1
+                font-weight: 700
+            &__desc
+                font-size: 16px
+                line-height: 1.5
+                color: #DFDFDF
+        &-features
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            margin-top: 72px
+            &-card
+                display: inline-flex
+                align-items: center
+                margin-right: 100px
+                &:nth-child(1)
+                    display: flex
+                    margin-bottom: 44px
+                    width: 100%                   
+                &__img
+                    display: inline-block
+                    width: 60px
+                    height: 60px
+                &__title
+                    padding-left: 25px
+                    font-size: 18px
+                    line-height: 1.5
+        &-offer            
+            box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px
+            background: rgba(0, 0, 0, 0.65)
+            padding-top: 38px
+            padding-bottom: 50px
+            padding-left: 35px
+            padding-right: 35px
+            position: relative
+            &::after
+                content: ''
+                position: absolute
+                top: 15px
+                bottom: 15px
+                left: 15px
+                right: 15px
+                border-radius: 10px
+                border: 1px solid #fff
+                z-index: 1
+                opacity: 0.25
+            &__title
+                @include Serif                
+                text-align: center
+                font-size: 26px
+                line-height: 1.4
+                margin-bottom: 5px
+                color: #ffffff
+            &__subtitle
+                text-align: center
+                line-height: 1.5
+                font-size: 16px
+                color: #DFDFDF
+            &-form
+                margin-top: 25px
+                display: flex
+                flex-direction: column
+                position: relative
+                z-index: 2
+                &-wrap
+                    position: relative
+                    &::after
+                        position: absolute
+                        content: ''
+                        display: inline-block
+                        width: 15px
+                        height: 15px
+                        background: url(../img/main-block/user.svg)
+                        left: 13px
+                    &:nth-child(2)
+                        &::after
+                            background: url(../img/main-block/telephone.svg)
+                    &:nth-child(3)
+                        &::after
+                            background: url(../img/answers/information.svg)
+                &__input
+                    margin-bottom: 20px
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.25)
+                    padding-bottom: 13px
+                    padding-left: 40px
+                    text-transform: uppercase
+                    color: #fff
+                    width: 100%
+                &__file
+                &__btn
+                    background: linear-gradient(180deg, #FFB75E 0%, #ED8F03 100%)
+                    box-shadow: 0px 3px 0px #C67702
+                    border-radius: 9999px
+                    padding-top: 14px
+                    padding-bottom: 14px
+                    color: #fff
+                    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35)
+                    line-height: 1.2
+                    font-size: 16px
+                    font-weight: 700
+                    margin-top: 20px
+                    margin-bottom: 20px
+                    transition: box-shadow 0.3s
+                    &:hover
+                        box-shadow: unset
+                        transition: box-shadow 0.3s
+                    &:active
+                        box-shadow: unset
+                        transition: box-shadow 0.3s
+                &-object
+                    display: flex
+                    align-items: center
+                    &__checkbox
+                        display: inline-flex
+                        width: 15px
+                        height: 15px
+                        align-items: center
+                        justify-content: center
+                        background-color: rgba(255, 255, 255, 0.25)
+                        border-radius: 2px
+                        position: relative
+                        cursor: pointer
+                        margin-right: 10px
+                        &::after
+                            content: ''
+                            display: 
+                            position: absolute
+                            width: 9px
+                            height: 9px
+                            background-image: url(../img/tick.svg)
+                            opacity: 1
+                    &--hidden
+                    &__desc
+                        font-size: 13px
+                        color: #A3A3A3
+                    &__link
+                        color: #A3A3A3
+                        text-decoration: underline
+                &-file
+                    position: relative
+                    &::after
+                        content: ''
+                        display: inline-block
+                        position: absolute
+                        top: -2px
+                        left: 13px
+                        width: 20px
+                        height: 20px
+                        background-image: url(../img/attach.svg)
+                        background-repeat: no-repeat
+                        cursor: pointer
+                    &__add
+                    &__fake
+                        cursor: pointer
+                        margin-left: 43px
+                        position: relative
+                        color: #FFB75E
+                        &--gray
+                            color: #A3A3A3
+
+                        
+.header-bottom-offer-form-object__checkbox--hidden:checked + .header-bottom-offer-form-object__checkbox:after
+    opacity: 0
+input.header-bottom-offer-form__input::placeholder
+    color: #fff
+.header-top.fixed
+    background-color: rgba(0,0,0,0.95);
+    border-color: transparent;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+                    
+// /Header
+// Why
+
+.why
+    padding-top: 114px
+    padding-bottom: 60px      
+    &__title
+        @include Title  
+        &--bold
+            font-weight: 700
+            color: #FFB75E
+    &-features                                       
+        &-card
+            display: inline-flex
+            align-items: center                                            
+            margin-bottom: 60px                                                       
+            &__img
+                display: inline-block
+                width: 100px
+                height: 100px
+            &__title                               
+                margin-left: 25px                
+                font-size: 18px
+                font-weight: 500
+                line-height: 1.5
+                color: #444444
+// /Why
+// Services
+.services
+    padding-top: 96px
+    padding-bottom: 70px
+    background: 
+        image: url(../img/services/main.png)
+        size: cover
+        repeat: no-repeat
+        position: center
+    &__title        
+        @include Title 
+        color: #0F0F0F
+    &-cards                       
+        &-card
+            display: flex            
+            align-items: flex-end
+            position: relative
+            height: 250px
+            padding-top: 20px
+            padding-right: 20px
+            padding-bottom: 20px
+            padding-left: 20px
+            margin-bottom: 30px
+            filter: drop-shadow(0px 6px 15px rgba(0, 0, 0, 0.15))
+            border-radius: 5px
+            overflow: hidden
+            &:hover
+                .services-cards-card__img
+                    transform: scale(1.1)
+                    transition: transform 0.4s
+            &::after
+                content: ''
+                display: inline-block
+                width: 100%
+                height: 100%
+                z-index: 1
+                position: absolute
+                top: 0
+                left: 0
+                background: linear-gradient(40.85deg, rgba(0, 0, 0, 0.6) 20.14%, rgba(0, 0, 0, 0) 61.79%)                                                                            
+            &__img                
+                display: inline-block
+                width: 100%
+                height: 100%
+                position: absolute
+                top: 0
+                right: 0
+                left: 0
+                bottom: 0
+                z-index: 1
+                transition: transform 0.4s           
+            &-desc               
+                position: relative                
+                z-index: 2
+                width: 100%
+                display: flex
+                justify-content: space-between
+                align-items: flex-end                                                                                                                                                       
+                &__title
+                    font-size: 28px
+                    line-height: 1.3
+                    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25)
+                    color: #fff
+                    font-weight: bold
+                &__link
+                    height: 40px
+                    width: 40px
+                &__arrow
+                    display: inline-block
+                    width: 40px
+                    height: 40px                    
+// /Services
+// step
+.step
+    padding-top: 90px
+    padding-bottom: 90px
+    &__title
+        @include Title
+        color: #0F0F0F
+        &--bold
+            @extend .why__title--bold
+    &__subtitle
+        margin-top: 100px
+        margin-bottom: 50px
+        font-size: 26px
+        line-height: 1.5
+        color: #0F0F0F
+        border-left: 4px solid #FFB75E
+        padding-left: 16px
+        font-weight: bold
+    &-table
+        margin-top: 30px        
+        width: 100%                                    
+        &__row
+            display: flex            
+            border-bottom: 1px solid #EEEEEE
+            &:last-child
+                border: none                                                        
+        &__cel
+            padding-bottom: 17px
+            padding-top: 17px
+            width: 25%
+            display: flex
+            justify-content: center
+            align-items: center
+            border-right: 1px solid #EEEEEE
+            &:first-child
+                justify-content: flex-start                
+            &:last-child
+                border: none                               
+        &__desc
+            font-size: 20px
+            line-height: 1.5
+            color: #0F0F0F
+        &__check            
+            display: inline-block
+            width: 36px
+            height: 36px
+        &__lock 
+            @extend .step-table__check
+    &-sink
+        padding-top: 30px
+        &-card
+            padding: 16px 22px
+            background: #FFFFFF
+            box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.05)
+            border-radius: 10px
+            position: relative
+            &__img
+                display: inline-block
+                width: 100%
+            &__number
+                font-size: 26px
+                line-height: 1
+                font-weight: bold
+                color: #FFB75E
+                position: absolute
+                bottom: 16px
+                left: 30px
+    &-stones
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap               
+        &-card                       
+            background: #FFFFFF
+            box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.05)
+            border-radius: 10px
+            padding: 17px 26px
+            margin-bottom: 30px
+            margin-right: 30px
+            position: relative
+            &__img                
+                display: inline-block
+                height: 105px
+            &__numbers
+                font-size: 22px
+                line-height: 1
+                font-weight: bold
+                color: #FFB75E
+                position: absolute
+                bottom: 10px
+                left: 13px 
+    &-walls
+        &-card            
+            background: #FFFFFF
+            box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.05)
+            border-radius: 10px
+            padding: 30px
+            position: relative
+            &__title
+                position: absolute
+                right: 30px
+                top: 30px
+                display: block
+                font-size: 20px
+                line-height: 1.5
+                font-weight: bold
+                text-align: right
+                color: #0F0F0F
+            &--desc
+                display: block
+                font-size: 16px
+                line-height: 1.5
+                text-align: right
+                font-weight: normal               
+            &__img
+                display: inline-block
+                width: 100%
+            
+    &__btn               
+        padding: 20px 50px        
+        background: linear-gradient(180deg, #FFB75E 0%, #ED8F03 100%)
+        box-shadow: 0px 3px 0px #C67702
+        border-radius: 9999px
+        font-size: 16px
+        line-height: 1.2
+        color: #FFFFFF
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35)
+        display: block
+        margin: 0 auto
+        margin-top: 70px
+        font-weight: bold
+        transition: box-shadow 0.3s
+        &:hover
+            box-shadow: unset
+            transition: box-shadow 0.3s
+        &:active
+            box-shadow: unset
+            transition: box-shadow 0.3s
+// /step
+// examples
+.examples
+    padding-top: 120px
+    padding-bottom: 90px
+    &__title
+        @include Title
+    &-buttons
+        display: flex
+        justify-content: space-between
+        margin-bottom: 50px
+        margin-top: 70px
+        &-button
+            padding: 10px 20px
+            background:#F8F8F8
+            border-radius: 5px
+            transition: 0.4s
+            &:hover
+                background: #FFB75E
+                border-radius: 5px
+                transition: 0.4s
+            &__desc
+                font-size: 18px
+                line-height: 1.5
+                color: #000000
+    &-cases
+        &-case
+            &:not(:first-child)
+                display: none
+            &__link
+                display: inline-flex
+                justify-content: center
+                align-items: center
+                width: 100%
+                height: 100%
+                position: relative
+                transition: 0.4s
+                margin-bottom: 30px
+                height: calc( 100% - 30px )
+                &::after
+                    content: ''
+                    display: inline-block
+                    position: absolute
+                    width: 50px
+                    height: 50px
+                    background-image: url(../img/examples/zoom.svg)
+                    opacity: 0
+                    transition: 0.4s
+                &::before
+                    content: ''
+                    display: inline-block
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    top: 0
+                    left: 0
+                    background-color: #FFB75E
+                    opacity: 0
+                    transition: 0.4s
+            &__img
+                display: inline-block
+                width: 100%
+                height: 100%
+                object-fit: cover
+                object-position: bottom right
+
+.examples-cases-case__link:hover::before
+    opacity: 0.8
+    transition: 0.4s
+.examples-cases-case__link:hover::after
+    opacity: 1
+    transition: 0.4s
+// stock
+.stock
+    padding: 100px 0
+    &--bg-1
+        background: 
+            image: url(../img/stock/main.png)
+            size: cover
+            repeat: no-repeat
+            position: center
+    &__title
+        @extend .services__title
+        text-align: left
+        margin-bottom: 20px
+        &--bold
+            @extend .why__title--bold
+    &-gift
+        margin-bottom: 29px
+        display: flex
+        align-items: center
+        &__img
+            display: inline-block
+            height: 60px
+            width: 60px
+            margin-right: 25px
+        &__subtitle
+            font-size: 20px
+            line-height: 1.5
+    &__subtitle
+        font-size: 22px
+        line-height: 1.5
+        color: #000000
+        font-weight: bold
+    &--bg-2
+        background: 
+            image: url(../img/stock/main-2.png)
+            size: cover
+            repeat: no-repeat
+            position: center
+    &-days
+        &__desc
+            margin-right: 90px
+            margin-left: 35px
+            font-size: 16px
+            line-height: 1.3
+            color: #A3A3A3
+#counter
+    font-size: 92px
+    color: #FFB75E
+    font-weight: bold
+#counters
+    font-size: 92px
+    color: #FFB75E
+    font-weight: bold
+// /stock
+// clients
+.clients
+    padding: 100px 0    
+    background: 
+        image: url(../img/ordering/main.png)
+        size: cover
+        repeat: no-repeat
+        position: center
+    &__title
+        @include Title
+    &-cards
+        display: flex
+        justify-content: space-between
+        &-card
+            position: relative
+            &::after
+                content: ''
+                display: inline-block
+                position: absolute
+                width: 180px
+                height: 180px
+                background: #FFB75E
+                box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.1)
+                border-radius: 10px
+                transform: rotate(-10.46deg)
+                top: 0
+            &__img
+                display: inline-block
+                object-fit: cover
+                object-position: right
+                height: 180px
+                width: 180px
+                border-radius: 10px
+                filter: drop-shadow(0px 7px 15px rgba(0, 0, 0, 0.1)) 
+                position: relative
+                z-index: 2               
+            &__title
+                text-align: center
+                margin-top: 35px
+                font-size: 22px
+                line-height: 1.5
+                font-weight: bold
+                color: #0F0F0F
+// /clients
+// features
+.features
+    padding-top: 120px
+    padding-bottom: 20px
+    &__title
+        @include Title
+        &--bold
+            @extend .why__title--bold
+    &-box
+        margin-bottom: 50px
+        &-card
+            padding: 19px
+            align-items: center
+            margin-bottom: 50px
+            border: 1px solid #FFB75E
+            position: relative
+            &::after
+                content: ''
+                display: inline-block
+                position: absolute
+                width: 1px
+                height: 100px
+                background: #fff
+                top: 17px
+                left: -1px
+                bottom: 17px
+                z-index: 1
+            &__number
+                font-size: 64px
+                line-height: 1
+                font-weight: bold
+                color: #FFB75E
+                position: absolute
+                left: -30px
+                top: 37px
+                z-index: 2
+            &-wrap             
+                padding-top: 17px
+                padding-bottom: 21px
+                padding-left: 44px
+                padding-right: 20px
+                background: #F8F8F8
+                width: 100%            
+                &__title
+                    margin-bottom: 5px
+                    font-size: 22px
+                    line-height: 1.5
+                    font-weight: bold
+                    color: #0F0F0F
+                &__subtitle
+                    font-size: 16px
+                    line-height: 1.5
+                    color: #444444
+        &__bracket            
+            font-size: 300px
+            line-height: 1
+            color: #FFB75E
+            margin-left: 70px
+            &--reverse
+                margin-left: 10px        
+        &__subtitle
+            text-align: center
+            margin-bottom: 30px
+            margin-left: 52px
+            font-size: 72px
+            line-height: 1
+            font-weight: bold
+            color: #FFB75E
+            &--transparent
+                color: #fff
+                text-shadow: #F5F5F5 1px 1px 0, #F5F5F5 -1px -1px 0,#F5F5F5 -1px 1px 0, #F5F5F5 1px -1px 0      
+            &--gray
+                color: #F8F8F8
+// /features
+// guarantees
+.guarantees
+    padding-top: 120px
+    padding-bottom: 90px
+    &-wrap
+        display: flex
+        flex-direction: column                    
+        &__title
+            @include Title
+        &-card
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            justify-content: center
+            margin-bottom: 30px
+            height: 370px
+            padding-left: 30px
+            padding-right: 30px
+            border-radius: 10px
+            text-align: left
+            background: #FFFFFF
+            box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.05)
+            position: relative
+            &--orange
+                background: #FFB75E               
+            &__img
+                display: inline-block
+                width: 70px
+                height: 70px
+                position: relative
+                z-index: 2
+                &-bg
+                    position: absolute
+                    left: 50%
+                    transform: translateX(-50%)
+            &__title
+                padding-top: 15px
+                padding-bottom: 10px
+                font-size: 22px
+                line-height: 1.5
+                font-weight: bold
+                color: #0F0F0F
+                z-index: 2
+            &__subtitle
+                font-size: 15px
+                line-height: 1.5
+                color: #444444
+                z-index: 2
+// /guarantees
+// reviews
+.reviews
+    padding-top: 100px
+    padding-bottom: 100px
+    background: 
+            image: url(../img/reviews/main.png)
+            size: cover
+            repeat: no-repeat
+            position: center
+    &__title
+        @include Title
+        &--orange
+            font-weight: 700
+            color: #FFB75E
+    &-slider
+        transition: 0.4s
+        &-card
+            transition: 0.4s
+.owl-carousel .owl-nav button.owl-next span, .owl-carousel .owl-nav button.owl-prev span
+    font-size: 80px
+    color: #FFB75E
+.owl-carousel .owl-nav button.owl-next span
+    position: absolute
+    right: 0
+    top: 40%
+.owl-carousel .owl-nav button.owl-prev span
+    position: absolute
+    left: 0
+    top: 40%
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span
+    background: #FFB75E
+// answers
+.answers
+    padding-top: 120px
+    padding-bottom: 120px
+    &-wrap
+        &__title
+            @include Title
+            &--bold
+                @extend .why__title--bold
+    &-list
+        &-card
+            margin-bottom: 20px
+            background: #FFF
+            box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.05)
+            border-radius: 25px
+            padding: 13px 20px 13px 30px
+            &-top
+                display: flex
+                align-items: center
+                justify-content: space-between
+                &:hover
+                    cursor: pointer
+                &__title
+                    font-size: 16px
+                    line-height: 1.5
+                    font-weight: 500
+                    color: #0F0F0F
+                &__img
+                    transition: transform 0.4s
+            &-bottom
+                padding-top: 10px
+                display: none
+                &__desc
+                    font-size: 16px
+                    line-height: 1.5
+                    color: #444444
+
+.answers-list-card-top.active .answers-list-card-top__img
+    transform: rotate(90deg)
+    transition: transform 0.4s
+// /answers
+// contacts
+.contacts
+    padding-top: 120px
+    padding-bottom: 100px
+    &__title
+        @include Title
+        margin-bottom: 0
+    &-wrap
+        margin-top: 70px
+        display: flex
+        justify-content: space-between        
+        &-card
+            display: inline-block          
+            &__img                
+                padding: 20px
+                display: inline-block
+                height: 70px
+                width: 70px
+                background: #F8F8F8
+                background-size: cover
+                border-radius: 35%
+            &__title
+                margin-top: 15px
+                margin-bottom: 6px
+                font-size: 22px
+                line-height: 1.5
+                font-weight: bold
+                color: #0F0F0F
+            &__link
+                font-size: 18px
+                line-height: 1.5
+                color: #0F0F0F
+                transition: color 0.4s
+                &:hover
+                    color: #FFB75E
+                    transition: color 0.4s
+            &__subtitle
+                font-size: 18px
+                line-height: 1.5
+                color: #0F0F0F
+// /contacts
+// map
+.map
+    margin-bottom: -7px
+// /map
+// footer
+.footer
+    &-wrap
+        background: #FFB75E        
+        &-wrap
+            padding-top: 17px
+            padding-bottom: 17px
+            display: flex
+            justify-content: space-between            
+            &__subtitle
+                font-size: 16px
+                line-height: 1
+                color: #444444
+                &--underline
+                    border-bottom: 1px solid #000
+                    transition: border-color 0.4s
+                    &:hover
+                        border-color: transparent
+                        transition: border-color 0.4s
+// popup
+.popups-container
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 10
+    display: none
+    .popups-overlay
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background: rgba(0, 0, 0, 0.5)
+        cursor: pointer
+    .popup
+        position: relative
+        display: inline-block
+        width: 340px
+        background: #fff
+        border-radius: 5px
+        z-index: 2
+        padding: 30px 15px
+        &__close
+            position: absolute
+            display: inline-block
+            background-image: url(../img/close.svg)
+            width: 15px
+            height: 15px
+            top: 10px
+            right: 10px
+            border: none
+        &__title
+            margin-top: 15px
+            text-align: center
+            font-size: 18px
+            font-weight: bold
+        &-form
+            margin-top: 40px
+            display: flex
+            flex-direction: column
+            &__input
+                border-bottom: 1px solid rgba(0, 0, 0, .3)
+                padding: 10px 20px
+                margin-bottom: 20px
+            &__submit
+                border-radius: 999px
+                padding: 10px 20px
+                margin-top: 20px
+                display: inline-block
+                border: 1px solid #FFB75E
+                color: #000
+                transition: 0.4s
+                &:hover
+                    background-color: #FFB75E
+                    transition: background-color 0.4s
+    
+
+
+// Media 1200-1400px
+@media ( max-width: 1400px )
+    // header-top
+    .header-top__btn
+        font-size: 16px
+        padding: 14px 26px
+    .header-bottom-offer__subtitle
+        font-size: 15px
+    .header-bottom-offer-form__desc
+        font-size: 14px
+    .header-bottom-offer-form-object__desc
+        font-size: 12px
+    .header-bottom-offer-form-file__fake
+        font-size: 14px
+    // step
+    .step-stones-card
+        margin-bottom: 13px
+        margin-right: 13px
+    // services
+    .services__title, .stock__title
+        font-size: 42px
+    // features
+    .features-box__bracket
+        margin-left: 74px
+    .features-box__subtitle
+        margin-bottom: 12px
+        margin-top: 15px
+        font-size: 58px
+    .features-box-card-wrap__title
+        font-size: 19px
+    .features-box-card-wrap__subtitle
+        font-size: 14px
+    .features-box__bracket--reverse
+        margin-left: -5px
+    // answers
+    .answers-wrap__title
+        font-size: 42px
+    
+// Media 992-1200px
+@media ( max-width: 1200px )
+    .header 
+        padding-bottom: 100px
+    // header-top
+    .header-top__img
+        height: 34px
+    .header-top-contact__img
+        width: 13px
+        height: 13px
+    .header-top-contact__link
+        font-size: 15px
+    .header-top__btn
+        font-size: 14px
+        padding: 10px 20px
+    // header-bottom
+    .header-bottom
+        padding-top: 100px
+        margin-top: 0
+    .header-bottom__title
+        font-size: 33px
+    .header-bottom-stock
+        margin-top: 40px
+    .header-bottom-features-card
+        margin-right: 97px
+        margin-bottom: 44px
+    .header-bottom-features
+        margin-top: 55px
+    
+    // form
+    .header-bottom-offer
+        margin-top: 50px
+    .header-bottom-offer__title
+        font-size: 20px
+    .header-bottom-offer__subtitle
+        font-size: 14px
+    .header-bottom-offer-form
+        font-size: 84%
+    .header-bottom-offer-form__btn
+        font-size: 14px
+    .header-bottom-offer-form__desc
+        font-size: 14px
+    .header-bottom-offer-form-object__desc
+        font-size: 13px
+    // why
+    .why-features-card__title
+        font-size: 16px
+    .why__title
+        font-size: 40px
+    .why-features-card__img
+        width: 80px
+        height: 80px
+    // services
+    .services__title
+        font-size: 35px
+    .services-cards-card
+        height: 200px
+    .services-cards-card-desc__title
+        font-size: 22px
+    // step
+    .step__title
+        font-size: 40px
+    .step__subtitle 
+        font-size: 22px
+    .step-table__desc
+        font-size: 16px
+    .step-stones-card__img
+        height: 81px
+    .step-walls-card__title
+        font-size: 17px
+    .step-walls-card--desc
+        font-size: 14px
+    .stock-gift__subtitle
+        font-size: 18px
+    // examples
+    .examples-buttons-button__desc
+        font-size: 15px    
+    // clients
+    .clients__title
+        font-size: 40px
+    .clients-cards-card__img
+        width: 160px
+        height: 160px
+    .clients-cards-card::after
+        width: 160px
+        height: 160px
+    .clients-cards-card__title
+        font-size: 18px
+    // features
+    .features__title
+        font-size: 40px
+    .features-box__subtitle
+        font-size: 44px
+    .features-box__bracket
+        margin-left: 60px
+        font-size: 290px
+    .features-box-card-wrap__subtitle
+        font-size: 14px
+    .features-box-card__number
+        font-size: 58px
+    .features-box__bracket--reverse
+        margin-left: 0
+    .guarantees-wrap-card__img-bg
+        height: 80%
+    .guarantees-wrap-card__title
+        font-size: 20px
+    .guarantees-wrap-card
+        height: 350px
+    .guarantees-wrap-card__subtitle
+        font-size: 14px
+        br
+            display: none
+    // answers
+    .answers-wrap__title
+        font-size: 35px
+    // contacts
+    .contacts-wrap-card__title
+        font-size: 20px
+    .contacts-wrap-card__link
+        font-size: 15px
+    .contacts-wrap-card__subtitle
+        font-size: 15px
+// Media 768-992px
+@media ( max-width: 992px )
+    // header
+    // header-top
+    .header-top__img
+        height: 23px
+        margin-bottom: 5px
+    .header-top-contact
+        margin-left: 6px
+    .header-top__btn
+        margin-top: 5px
+        font-size: 14px
+        padding: 7px 9px
+    // header-bottom
+    .header-bottom
+        padding-top: 200px
+        margin-top: 0
+    .header-bottom__title
+        font-size: 21px
+    .header-bottom-stock__title
+        font-size: 21px
+    .header-bottom-stock::after
+        display: none
+    .header-bottom-features-card
+        margin-bottom: 20px
+    .header-bottom-features-card:nth-child(1)
+        margin-bottom: 20px
+    // form
+    // why
+    .why-features-card__title
+        margin-left: 20px
+    .why-features-card__img
+        width: 56px
+        height: 56px
+    // step
+    .step__title 
+        font-size: 33px
+        br
+            display: none
+    .step__subtitle
+        font-size: 21px
+    .step-table__check, .step-table__lock
+        width: 25px
+        height: 25px
+    .step-stones
+        justify-content: flex-start
+    .step-walls-card
+        margin-bottom: 20px
+    .step-sink-card
+        margin-bottom: 20px
+    .step-stones-card__img
+        height: 72px
+    .step-table__desc
+        font-size: 14px
+    .step-table__row:first-child .step-table__cel
+        text-align: center
+        transform: rotate(45deg)
+        border-left: none 
+        border-right: none
+    .step-table__row .step-table__cel:first-child
+        width: 40%
+    // examples
+    .examples-buttons
+        flex-wrap: wrap
+        justify-content: center
+        margin-top: 35px
+    .examples-buttons-button
+        padding: 7px 16px
+        margin-right: 20px
+        margin-top: 20px
+    .examples__title
+        margin-bottom: 40px
+    // services
+    // clients
+    .clients-cards
+        flex-wrap: wrap
+        justify-content: center
+    .clients-cards-card
+        margin-right: 60px
+        margin-bottom: 50px
+    .clients-cards-card__title
+        font-size: 16px
+        margin-top: 25px
+    .clients-cards-card__img
+        width: 110px
+        height: 110px
+    .clients-cards-card::after
+        width: 110px
+        height: 110px
+    // features
+    .features
+        padding-top: 60px
+    .features__title
+        font-size: 28px
+    .features-box-card-wrap__title
+        font-size: 14px
+    .features-box__subtitle
+        font-size: 35px
+    .features-box__bracket
+        margin-left: 28px
+    .features-box__bracket--reverse
+        margin-left: -15px
+    // reviews
+    .reviews__title
+        font-size: 35px
+    // gurantees
+    .guarantees
+        padding-top: 60px
+        padding-bottom: 45px
+    .guarantees-wrap-card__img-bg
+        width: 100%
+    .guarantees-wrap__title
+        font-size: 35px
+    .guarantees-wrap-card
+        height: 290px
+    // answers
+    .answers
+        padding-top: 60px
+        padding-bottom: 60px
+    // footer
+    .footer-wrap-wrap__subtitle
+        font-size: 14px
+    // contacts
+    .contacts
+        padding-top: 60px
+        padding-bottom: 50px
+    .contacts-wrap-card__title
+        font-size: 16px
+    .contacts-wrap-card__link
+        font-size: 14px
+    .contacts-wrap-card__subtitle
+        font-size: 14px
+    .contacts__title
+        font-size: 35px
+// Media 576-768px
+@media ( max-width: 768px )
+    // header
+    .header
+        padding-bottom: 50px
+    // header-top
+    .header-top__btn
+        font-size: 14px
+    // header-bottom
+    .header-bottom__title
+        font-size: 25px
+    .header-bottom-stock__title
+        font-size: 16px
+    .header-bottom-features
+        margin-top: 30px
+    .header-bottom-stock__desc
+        font-size: 14px
+    .header-bottom-features-card__img
+        width: 50px
+        height: 50px
+    .header-bottom-features-card__title
+        font-size: 14px
+    .header-bottom-features-card
+        margin-right: 40px
+    .header-bottom-stock::after
+        display: none
+    // form
+    // why
+    .why__title 
+        font-size: 33px
+    .why-features-card__img
+        width: 50px
+        height: 50px
+    .why-features-card
+        margin-bottom: 40px
+    .why-features-card__title
+        margin-left: 12px
+    // services
+    .services
+        padding-bottom: 40px
+    .services__title, .stock__title
+        margin-bottom: 50px        
+    .services-cards-card
+        height: 180px
+    .services-cards-card-desc__arrow
+        width: 35px
+        height: 35px
+    .services-cards-card-desc__title
+        font-size: 18px
+    // step
+    .step
+        padding-top: 50px
+        padding-bottom: 60px
+    .step__title
+        font-size: 24px
+        br
+            display: none
+    .step__subtitle
+        margin-top: 50px
+        font-size: 18px
+    .step-table__cel
+        padding-top: 10px
+        padding-bottom: 10px
+    .step-table__desc
+        font-size: 14px
+    .step-table__row:first-child .step-table__cel
+        text-align: center
+        transform: rotate(45deg)
+        border-left: none
+        border-right: none
+    .step-table__row .step-table__cel:first-child
+        width: 60%
+    .step-table__check, .step-table__lock, .step-table__lock
+        width: 20px
+        height: 20px
+    .step-sink-card
+        margin-bottom: 20px
+    .step-walls-card
+        margin-bottom: 20px
+    .step__btn 
+        margin-top: 40px
+    .step-stones-card__img
+        height: 71px
+    // stock
+    .stock__title
+        font-size: 29px
+    .stock-gift__img
+    .stock-gift__subtitle
+        font-size: 15px
+        br
+            display: none
+    .stock-gift
+        margin-bottom: 20px
+    .stock 
+        padding: 50px 0
+    .stock-days__desc
+        margin-right: 64px
+        margin-left: 18px
+    // clients
+    .clients
+        padding: 50px 0
+        margin-bottom: 40px
+    .clients-cards
+        flex-wrap: wrap
+        justify-content: space-evenly
+    .clients-cards-card
+        margin-right: 0
+        width: 100%
+        margin-bottom: 40px
+        text-align: center
+    .clients-cards-card__title
+        padding: 0
+    .clients-cards-card__img
+        width: 150px
+        height: 150px
+    .clients-cards-card:after
+            transform: rotate(-10.46deg) translateX(-50%)
+            width: 150px
+            height: 150px
+            left: 50%
+            top: -10px
+    // features
+    .features-box
+        margin-bottom: 0
+    .features-box__subtitle
+        display: none
+    .features-box-card-wrap__title
+        font-size: 16px
+    .features-box__bracket
+        display: none
+    .features-box__bracket--reverse
+        margin-left: -60px
+    // reviews
+    .reviews__title
+        font-size: 29px
+    // guarantees
+    .guarantees-wrap-card__title
+        br
+            display: none
+    .guarantees-wrap-card__subtitle
+        br
+            display: none
+    // owl carousel
+    .owl-carousel .owl-nav button.owl-prev span
+        left: -30px
+        top: 25%
+    .owl-carousel .owl-nav button.owl-next span
+        right: -30px
+        top: 25%
+    // contacts
+    .contacts-wrap
+        flex-direction: column
+        align-items: center
+        text-align: center
+        margin-top: 30px
+    .contacts-wrap-card
+        margin-top: 30px
+    .contacts-wrap-card__img
+        padding: 10px
+        width: 40px
+        height: 40px
+    .contacts__title
+        font-size: 29px
+    // answers
+    .answers-wrap__title
+        font-size: 29px
+    // footer
+    .footer-wrap-wrap
+        flex-direction: column
+        align-items: center
+    .footer-wrap-wrap__subtitle
+        margin-top: 15px
+    // counter
+    #counter
+        font-size: 70px
+    #counters
+        font-size: 70px
+// Media 0-576px
+@media ( max-width: 576px )
+    // header
+    .header-top__img
+        margin-bottom: 20px
+    .header-top__btn
+        margin-top: 20px
+        padding: 10px 20px
+    .header-bottom
+        padding-top: 250px
+        margin-top: 0
+    .header-bottom__title
+        text-align: center
+        font-size: 17px
+        br
+            display: none
+    .header-bottom__title
+        text-align: left
+        font-size: 20px
+    .header-bottom-offer
+        padding: 20px 30px
+    .header-bottom-offer:after
+        left: 10px
+        top: 10px
+        right: 10px
+        bottom: 10px
+    // why
+    .why
+        padding-top: 55px
+    .why__title
+        font-size: 29px
+    .why-features-card__img
+        width: 60px
+        height: 60px
+    .why-features-card__title
+        br
+            display: none
+    .services
+        padding-top: 50px
+    .step__subtitle
+        margin-top: 40px
+    .step-stones-card
+        padding: 20px
+    .services-cards-card-desc__title
+        font-size: 20px
+    .features-box
+        margin-bottom: 25px
+    .features-box-card-wrap
+        padding-left: 20px
+    .guarantees
+        padding-bottom: 0
+    .contacts
+        padding-top: 40px
+        padding-bottom: 40px
+    .contacts-wrap
+        padding-top: 35px
+        text-align: center
+    .answers
+        padding-top: 40px
+        padding-bottom: 40px
+    .step__title
+        margin-bottom: 0
+    .services__title
+        font-size: 28px
+    .step__title
+        font-size: 20px
+    .step__subtitle
+        font-size: 16px
+    .step__btn
+        font-size: 14px
+    .step-stones-card__img
+        height: 60px
+    .step-table__row:first-child .step-table__cel
+        transform: rotate(45deg)
+        border-left: none
+    .step-table__row:last-child .step-table__cel
+        transform: rotate(-20deg)
+        border-right: none
+    .step-table__row .step-table__cel:first-child
+        width: 80%
+    .guarantees-wrap__title
+        margin-bottom: 0
+    .guarantees-wrap-card
+        margin-top: 40px
+        height: 290px
+    .contacts-wrap
+        flex-wrap: wrap
+        text-align: center
+        justify-content: center
+    .contacts-wrap-card
+        margin-bottom: 30px
+    .footer-wrap-wrap
+        flex-wrap: wrap
+    .footer-wrap-wrap__subtitle
+        margin-bottom: 10px
+    .stock__title
+        font-size: 29px
+    .stock__subtitle
+        font-size: 18px
+    .stock-gift__subtitle
+        font-size: 18px
+    .stock-gift__img
+        margin-right: 16px
+        width: 50px
+        height: 50px
+    .stock__title-size
+        font-size: 29px
+    .clients
+        margin-bottom: 0
+        padding-bottom: 25px
+    .features
+        padding-top: 30px
+    .features__title
+        margin-bottom: 45px
+    .features-box-card-wrap__title
+        br
+            display: none
+    .features-box-card-wrap__subtitle
+        br
+            display: none
+    .features-box-card
+        margin-left: 30px
+    .answers-wrap__title
+        font-size: 30px
+    .map__img
+        height: 300px
+    .clients__title
+        font-size: 29px
+    .features__title
+        font-size: 29px
+    .clients-cards-card
+        margin-right: 40px
+    .footer-wrap-wrap__subtitle
+        text-align: center
